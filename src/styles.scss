@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #2f3e46;        /* Navbar + Footer (mörk huvudfärg) */
+  --color-primary-light: #354f52;  /* Hover / sekundära ytor */
+  
+  --color-background: #4f93d6;     /* Bakgrund på sidor f8f9fa*/
+  --color-surface: #ffffff;        /* Kort, formulär, boxar */
+
+  --color-accent: #e76f51;          /* Knappar, CTA (Boka, Skicka) */
+  --color-accent-hover: #d65a3a;
+
+  --color-text-dark: #1f2933;       /* Brödtext */
+  --color-text-light: #ffffff;      /* Text i navbar/footer */
+}
+
+
+*{
+    background-color: var(--color-background);
+}
