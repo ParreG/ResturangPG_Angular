@@ -1,1 +1,48 @@
-<p>navbar works!</p>
+<nav class="pg-navbar">
+  <div class="pg-container">
+    <!-- Brand -->
+    <a class="pg-brand" href="https://localhost:7270/">
+      <img
+        class="pg-logo"
+        src="https://github.com/ParreG/bilder/blob/main/6478fe81-92bf-4fe8-80af-456a79b4bc98.png?raw=true"
+        alt="Restaurang PG"
+      />
+      <gds-text 
+      *nggCoreElement
+      tag="h2"
+      font-weight="bold"
+      class="pg-title"
+      style="color: var(--color-primary-light)">
+      Restaurang PG
+    </gds-text>
+
+    </a>
+
+    <!-- Nav right -->
+    <div class="pg-nav">
+      <!-- MVC links (external) -->
+      <gds-button *nggCoreElement class="pg-nav__btn" href="https://localhost:7270/">
+        Start
+      </gds-button>
+
+      <gds-button *nggCoreElement class="pg-nav__btn" href="https://localhost:7270/Dish">
+        Meny
+      </gds-button>
+
+      <!-- Angular route (internal) -->
+      <gds-button
+        *nggCoreElement
+        class="pg-nav__btn"
+        routerLink="/Booking"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Boka bord
+      </gds-button>
+
+      <gds-button *nggCoreElement class="pg-nav__btn" href="https://localhost:7270/Login">
+        Admin
+      </gds-button>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,31 @@
+.pg-navbar {
+  background-color: var(--color-primary);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.pg-container {
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.pg-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.pg-logo {
+  height: 3rem;
+}
+
+.pg-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+
