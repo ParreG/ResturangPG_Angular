@@ -2,47 +2,45 @@
   <div class="pg-container">
     <!-- Brand -->
     <a class="pg-brand" href="https://localhost:7270/">
-      <img
-        class="pg-logo"
+      <img class="pg-logo"
         src="https://github.com/ParreG/bilder/blob/main/6478fe81-92bf-4fe8-80af-456a79b4bc98.png?raw=true"
-        alt="Restaurang PG"
-      />
-      <gds-text 
-      *nggCoreElement
-      tag="h2"
-      font-weight="bold"
-      class="pg-title"
-      style="color: var(--color-primary-light)">
-      Restaurang PG
-    </gds-text>
-
+        alt="Restaurang PG" />
+      <h2 class="pg-title" style="color: var(--color-primary-light)">
+        Restaurang PG
+      </h2>
     </a>
 
+    <button class="pg-burger" [class.open]="menuOpen" (click)="toggleMenu()" aria-label="Öppna meny">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <!-- Nav right -->
-    <div class="pg-nav">
-      <!-- MVC links (external) -->
-      <gds-button *nggCoreElement class="pg-nav__btn" href="https://localhost:7270/">
-        Start
-      </gds-button>
+    <ul class="navbar-nav ms-auto pg-nav" [class.open]="menuOpen">
+      <li class="nav-item">
+        <a class="nav-link" href="https://localhost:7270/">
+          Start
+        </a>
+      </li>
 
-      <gds-button *nggCoreElement class="pg-nav__btn" href="https://localhost:7270/Dish">
-        Meny
-      </gds-button>
+      <li class="nav-item">
+        <a class="nav-link" href="https://localhost:7270/Dish">
+          Meny
+        </a>
+      </li>
 
-      <!-- Angular route (internal) -->
-      <gds-button
-        *nggCoreElement
-        class="pg-nav__btn"
-        routerLink="/Booking"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        Boka bord
-      </gds-button>
+      <li class="nav-item active">
+        <a class="nav-link currentPage" routerLink="/Booking" (click)="menuOpen = false">
+          Boka bord
+        </a>
+      </li>
 
-      <gds-button *nggCoreElement class="pg-nav__btn" href="https://localhost:7270/Login">
-        Admin
-      </gds-button>
-    </div>
+      <li class="nav-item">
+        <a class="nav-link" href="https://localhost:7270/Login">
+          Admin
+        </a>
+      </li>
+    </ul>
   </div>
 </nav>

@@ -31,3 +31,12 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: #2c3e50;
 }
+
+main {
+  min-height: calc(90vh - 80px); // justera efter navbar-höjd
+}
+
+body.booking-page main {
+  background-color: var(--color-primary);
+}
+
