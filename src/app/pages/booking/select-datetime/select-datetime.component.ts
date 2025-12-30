@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class SelectDatetimeComponent {
 
+  ngOnInit() {
+  console.log('SELECT DATETIME INIT');
+}
 }

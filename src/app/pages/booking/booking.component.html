@@ -1,0 +1,79 @@
+<div class="booking-page">
+    <div class="booking-card">
+
+        <header class="booking-header">
+            <h1>🍽️ Boka bord nu</h1>
+        </header>
+
+        <nav class="booking-steps">
+            <button class="step" [class.active]="step === 1" [class.done]="maxStepReached > 1"
+                [disabled]="maxStepReached < 1" (click)="goToStep(1)">
+                1. Bokning
+            </button>
+
+            <button class="step" [class.active]="step === 2" [class.done]="maxStepReached > 2"
+                [disabled]="maxStepReached < 2" (click)="goToStep(2)">
+                2. Uppgifter
+            </button>
+
+            <button class="step" [class.active]="step === 3" [class.done]="maxStepReached > 3"
+                [disabled]="maxStepReached < 3" (click)="goToStep(3)">
+                3. Stämmer allt?
+            </button>
+
+            <button class="step" [class.active]="step === 4" [class.done]="maxStepReached > 4" (click)="goToStep(4)">
+                4. Bekräftelse
+            </button>
+        </nav>
+
+        <section class="booking-content">
+
+            @switch (step) {
+
+            @case (1) {
+            <div>
+                <p>Steg 1 – Information om din bokning</p>
+                <app-select-datetime></app-select-datetime>
+            </div>
+            }
+
+            @case (2) {
+            <div>
+                <p>Steg 2 – Fyll i dina kontaktuppgifter</p>
+                <app-contact-details></app-contact-details>
+            </div>
+            }
+
+            @case (3) {
+            <div>
+                <p>Steg 3 – Stämmer dina uppgifter?</p>
+                <app-review></app-review>
+            </div>
+            }
+
+            @case (4) {
+            <div>
+                <p>Steg 4 – Bekräfta bokning</p>
+                <app-confirmation></app-confirmation>
+            </div>
+            }
+
+            }
+        </section>
+
+        <footer class="booking-actions">
+            <button class="btn-secondary" (click)="prev()" [disabled]="step === 1">
+                👈 Tillbaka
+            </button>
+
+            @if (step < 4) { <button class="btn-primary" (click)="next()">
+                Nästa 👉
+                </button>
+            } @else {
+                <button class="btn-primary" (click)="resetBooking()">
+                    🔄 Gör ny bokning
+                </button>
+            }
+        </footer>
+    </div>
+</div>
