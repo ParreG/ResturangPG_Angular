@@ -15,6 +15,8 @@ import { SelectDatetimeComponent } from './pages/booking/select-datetime/select-
 import { ContactDetailsComponent } from './pages/booking/contact-details/contact-details.component';
 import { ReviewComponent } from './pages/booking/review/review.component';
 import { ConfirmationComponent } from './pages/booking/confirmation/confirmation.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { ErrorMessageComponent } from './shared/error-message/error-message.component';
 
 @NgModule({
   declarations: [
@@ -25,16 +27,18 @@ import { ConfirmationComponent } from './pages/booking/confirmation/confirmation
     SelectDatetimeComponent,
     ContactDetailsComponent,
     ReviewComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    LoadingSpinnerComponent,
+    ErrorMessageComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-loading-spinner',
-  standalone: false,
   templateUrl: './loading-spinner.component.html',
-  styleUrl: './loading-spinner.component.scss',
+  styleUrls: ['./loading-spinner.component.scss'],
+  standalone: false,
 })
 export class LoadingSpinnerComponent {
-
+  @Input() message = 'Laddar...';
 }
