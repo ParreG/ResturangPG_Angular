@@ -1,1 +1,49 @@
-<p>confirmation works!</p>
+<div class="confirmation-section">
+  @if (isLoading) {
+  <div class="loading-state">
+    <div class="spinner"></div>
+    <p>Skapar din bokning...</p>
+  </div>
+  } @else if (error) {
+  <div class="error-state">
+    <div class="error-icon">❌</div>
+    <h2>Något gick fel</h2>
+    <p>{{ error }}</p>
+  </div>
+  } @else if (bookingCreated) {
+  <div class="success-state">
+    <div class="success-icon">✅</div>
+    <h1>Bokningen är bekräftad!</h1>
+    <p class="booking-number">Bokningsnummer: <strong>#{{ bookingId }}</strong></p>
+
+    <div class="confirmation-details">
+      <h3>📋 Bokningsdetaljer</h3>
+      <div class="detail-row">
+        <span class="label">Datum:</span>
+        <span class="value">{{ formatDate(bookingData.date) }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Tid:</span>
+        <span class="value">{{ bookingData.time }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Antal gäster:</span>
+        <span class="value">{{ bookingData.numberOfGuests }} personer</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Namn:</span>
+        <span class="value">{{ bookingData.name }} {{ bookingData.lastName }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">E-post:</span>
+        <span class="value">{{ bookingData.email }}</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p>📧 En bekräftelse har skickats till {{ bookingData.email }}</p>
+      <p>📞 Vi ser fram emot att se dig! Ring oss på 040-123 45 67 vid frågor.</p>
+    </div>
+  </div>
+  }
+</div>

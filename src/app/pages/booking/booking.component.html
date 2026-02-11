@@ -53,7 +53,6 @@
 
             @case (4) {
             <div>
-                <p>Steg 4 – Bekräfta bokning</p>
                 <app-confirmation></app-confirmation>
             </div>
             }
@@ -66,14 +65,15 @@
                 👈 Tillbaka
             </button>
 
-            @if (step < 4) { <button class="btn-primary" (click)="next()">
-                Nästa 👉
+            @if (step < 4) { <button class="btn-primary" (click)="next()" [disabled]="isNextBusy">
+                @if (isNextBusy) { <span>Kontrollerar...</span> } @else { <span>Nästa 👉</span> }
                 </button>
-            } @else {
+                }
+                @else {
                 <button class="btn-primary" (click)="resetBooking()">
                     🔄 Gör ny bokning
                 </button>
-            }
+                }
         </footer>
     </div>
 </div>

@@ -1,1 +1,41 @@
-<p>review works!</p>
+<div class="review-section">
+  <div class="review-card">
+    <h2>Granska din bokning</h2>
+    
+    <div class="review-group">
+      <h3>📅 Bokningsdetaljer</h3>
+      <div class="detail-row">
+        <span class="label">Datum:</span>
+        <span class="value">{{ formatDate(bookingData.date) }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Tid:</span>
+        <span class="value">{{ bookingData.time }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Antal gäster:</span>
+        <span class="value">{{ bookingData.numberOfGuests }} personer</span>
+      </div>
+    </div>
+
+    <div class="review-group">
+      <h3>👤 Kontaktuppgifter</h3>
+      <div class="detail-row">
+        <span class="label">Namn:</span>
+        <span class="value">{{ bookingData.name }} {{ bookingData.lastName }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">E-post:</span>
+        <span class="value">{{ bookingData.email }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Telefon:</span>
+        <span class="value">{{ bookingData.tel }}</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p>✅ Kontrollera att uppgifterna stämmer innan du bekräftar din bokning.</p>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,39 @@
-<p>select-datetime works!</p>
-<button>
-    <div>
-        HEJ
+<div class="datetime-section">
+  <form [formGroup]="form" class="booking-form">
+    <div class="form-group">
+      <label for="date">Välj datum 📅</label>
+      <input type="date" id="date" formControlName="date" class="form-control"
+        [min]="minDate.toISOString().split('T')[0]" [max]="maxDate.toISOString().split('T')[0]" />
+      @if (form.get('date')?.invalid && form.get('date')?.touched) {
+      <small class="error-text">Vänligen välj ett datum</small>
+      }
     </div>
-</button>
+
+    <div class="form-group">
+      <label for="time">Välj tid ⏰</label>
+      <select id="time" formControlName="time" class="form-control">
+        <option value="">Välj tid</option>
+        @for (time of availableTimes; track time) {
+        <option [value]="time">{{ time }}</option>
+        }
+      </select>
+      @if (form.get('time')?.invalid && form.get('time')?.touched) {
+      <small class="error-text">Vänligen välj en tid</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="guests">Antal gäster 👥</label>
+      <input type="number" id="guests" formControlName="numberOfGuests" class="form-control" min="1" max="8" />
+      @if (form.get('numberOfGuests')?.invalid && form.get('numberOfGuests')?.touched) {
+      <small class="error-text">Välj mellan 1-8 gäster</small>
+      }
+    </div>
+
+    @if (availabilityChecked && availableTablesCount === 0) {
+    <div class="availability-error">
+      ❌ Tyvärr finns inga lediga bord för vald tid. Prova en annan tid eller datum.
+    </div>
+    }
+  </form>
+</div>

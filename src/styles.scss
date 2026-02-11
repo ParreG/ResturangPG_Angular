@@ -1,42 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
 :root {
-  --color-primary: #0d1b4c;        /* Navbar + Footer (mörk huvudfärg) */
-  --color-primary-light: #ffd700;  /* Hover / sekundära ytor */
-  
-  --color-background: rgba(8, 30, 84, 0.25);     /* Bakgrund på sidor f8f9fa*/
-  --color-surface: #ffffff;        /* Kort, formulär, boxar */
-
-  --color-accent: #e76f51;          /* Knappar, CTA (Boka, Skicka) */
-  --color-accent-hover: #d65a3a;
-
-  --color-text-dark: #1f2933;       /* Brödtext */
-  --color-text-light: #ffffff;      /* Text i navbar/footer */
+  --color-primary: #0d1b4c;
+  --color-primary-light: #ffd700;
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-accent: #ffd700;
+  --color-accent-hover: #e6c200;
+  --color-text-dark: #1f2933;
+  --color-text-light: #ffffff;
+  --color-error: #dc3545;
+  --color-success: #28a745;
 }
 
 html {
-    font-size: 14px;
-    position: relative;
-    min-height: 100%;
+  font-size: 14px;
+  position: relative;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 
 body {
-    margin: 0;
-    background-color: #fdfdfd;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: #2c3e50;
+  margin: 0;
+  background-color: var(--color-background);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-text-dark);
 }
 
 main {
-  min-height: calc(90vh - 80px); // justera efter navbar-höjd
+  min-height: calc(90vh - 80px);
 }
 
 body.booking-page main {
   background-color: var(--color-primary);
 }
-
